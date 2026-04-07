@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+test-results/
+playwright-report/
+lighthouse-report/
+artifacts/
+*.trace
+*.har
